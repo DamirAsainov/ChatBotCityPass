@@ -11,5 +11,10 @@
 <body data-bs-theme="dark" class="bg-secondary">
 <h1>Hello World 5ds</h1>
 </body>
-
+<script>
+    //получать гео позицию у пользователь
+    navigator.geolocation.getCurrentPosition(function (position) {
+        console.log(position.coords.latitude +"   " + position.coords.longitude);
+    });
+</script>
 </html>
