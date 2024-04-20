@@ -32,10 +32,11 @@
 <h1>Map 2gis</h1>
 <div id="map-container"></div>
 <div id="container"></div>
+<input type="text" id="search1"><button onclick="search()">search</button>
 <script src="https://mapgl.2gis.com/api/js/v1"></script>
 <script src="https://unpkg.com/@2gis/mapgl-directions@^2/dist/directions.js"></script>
 <script>
-    const map = new mapgl.Map('container', {
+    let map = new mapgl.Map('container', {
         center: [lng, lat],
         zoom: 13,
         key: 'a03f49e3-b375-4933-ac64-8a18f902f805',
@@ -67,19 +68,20 @@
         }
     });
 
-    const userMarker = new mapgl.Marker(map, {
-        coordinates: [lng, lat],
-        label: {
-            text: "Я",
-            offset: [0, -75],
-            image: {
-                url: 'https://docs.2gis.com/img/mapgl/tooltip.svg',
-                size:[100,40],
-                padding:[10, 10, 20,10],
+    function createNewMarker(_lng, _lat, label) {
+        return new mapgl.Marker(map, {
+            coordinates: [_lng, _lat],
+            label: {
+                text: label,
+                offset: [0, -75],
+                image: {
+                    url: 'https://docs.2gis.com/img/mapgl/tooltip.svg',
+                    size: [100, 40],
+                    padding: [10, 10, 20, 10],
+                }
             }
-        }
-    });
-
+        });
+    }
     const directions = new mapgl.Directions(map, {
         // This key can be used for demo purpose only!
         // You can get your own key on http://partner.api.2gis.ru/
@@ -87,8 +89,36 @@
     });
 
     directions.pedestrianRoute({
-        points: [userMarker.getCoordinates(), marker.getCoordinates(), marker2.getCoordinates()],
+        points: [createNewMarker(lng,lat, "Я").getCoordinates(), marker.getCoordinates(), marker2.getCoordinates()],
     });
+    function search(){
+        fetch("https://catalog.api.2gis.com/3.0/items/geocode?q=" + "астана "+document.getElementById('search1').value +"&fields=items.point&key=a03f49e3-b375-4933-ac64-8a18f902f805", {
+            method: 'GET',
+        }).then(response => response.json())
+            .then(data => {
+                // Call the provided callback function with the response data
+                console.log(data)
+                createNewMarker(data.result.items[0].lon, data.result.items[0].lat, data.result.items[0].name)
+                // Уничтожаем текущий экземпляр карты, если он существует
+                if (map) {
+                    map.destroy();
+                }
+
+               const _lon = data.result.items[0].point.lon
+                const _lat = data.result.items[0].point.lat
+                map = new mapgl.Map('container', {
+                    center: [parseFloat(data.result.items[0].point.lon), parseFloat(data.result.items[0].point.lat)],
+                    zoom: 13,
+                    key: 'a03f49e3-b375-4933-ac64-8a18f902f805',
+                    style: 'c080bb6a-8134-4993-93a1-5b4d8c36a59b'
+                });
+
+                console.log(_lon + " " + _lat)
+                // Создаем маркер для нового центра
+                createNewMarker(parseFloat(data.result.items[0].point.lon), parseFloat(data.result.items[0].point.lat), data.result.items[0].name);
+
+            }).catch(error => console.error('ErrorTest:', error));
+    }
 </script>
 </body>
 </html>
