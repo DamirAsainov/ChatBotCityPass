@@ -5,16 +5,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bot</title>
-
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/media.css">
 </head>
 
 <body data-bs-theme="dark" class="bg-secondary">
-<h1>Hello World 5ds</h1>
+
+    <header class="header">
+
+        <header class="header-container">
+
+            <h1 class="brand">
+                PEACE DATA
+            </h1>
+    
+            <div class="navbar-menu">
+    
+                <div class="navbar-item">About Us</div>
+                <div class="navbar-item">Account</div>
+    
+            </div>
+
+        </header>
+
+    </header>
+
+    <div class="main-wrapper">
+        
+        <main id="main">
+
+            <div class="main-body">
+
+                
+                <div class="chat">
+                    
+                    <div class="messages">
+                        <div class="message-block">
+
+                            <img src="imgs/Group 3.svg" alt="" class="author">
+    
+                            <div class="message-text">
+                                Hey, how are you?
+                            </div>
+    
+                        </div>
+    
+                        <div class="message-block after">
+    
+                            <img src="imgs/Icon.svg" alt="" class="author">
+    
+                            <div class="message-text">
+                                Great! What can I do for you?
+                            </div>
+    
+                        </div>
+    
+                        <div class="message-block after">
+    
+                            <img src="imgs/Group 3.svg" alt="" class="author">
+    
+                            <div class="message-text">
+                                What is the nearest building?
+                            </div>
+    
+                        </div>
+    
+                        <div class="message-block after">
+    
+                            <img src="imgs/Icon.svg" alt="" class="author">
+    
+                            <div class="message-text">
+                                The closest building is <span class="highlight">Khan Shatyr.</span> <br>
+                                <br>
+                                You can get more information in the right bar.
+                            </div>
+    
+                        </div>
+                    </div>
+
+                    <div class="message-send">
+
+                        <input type="text" name="send-message"
+                        placeholder="Type your message..."
+                        id="send-message">
+
+                    </div>
+
+                </div>
+
+                <div class="info">
+
+                    <div class="first-row">
+
+                        HELLO!
+
+                    </div>
+
+                    <div class="second-row">
+
+                        HELLO!
+                        
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
 </body>
-<script>
-    //получать гео позицию у пользователь
-    navigator.geolocation.getCurrentPosition(function (position) {
-        console.log(position.coords.latitude +"   " + position.coords.longitude);
-    });
-</script>
+
 </html>
