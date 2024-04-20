@@ -41,7 +41,7 @@ main {
 }
 
 .header {
-    background-color: #111026;
+    background-color: #00B1FE;
 
     color: #fafafa;
 }
@@ -64,7 +64,7 @@ main {
 }
 
 .navbar-item:hover {
-    color: #00B1FE;
+    color: #111026;
 }
 
 main {
@@ -79,6 +79,7 @@ main {
 
 .chat {
     padding-top: 70px;
+    width: 60%;
 }
 
 .message-block {
@@ -124,5 +125,14 @@ main {
     color: #FAFAFA;
     opacity: 80%;
 }
+
+.second-row {
+    padding-top: 30px;
+}
+
+.two-gis-map {
+    width: 300px; height: 200px;
+}
+
 
 

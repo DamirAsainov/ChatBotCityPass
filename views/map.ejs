@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <style>
+        #container {
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+    <script>
+        let lat, lng;
+        navigator.geolocation.getCurrentPosition(
+            async (position) => {
+                lat = parseFloat(position.coords.latitude)
+                lng = parseFloat(position.coords.longitude)
+
+                console.log(lat + " " + lng);
+            },
+            (error) => {
+                console.log(error)
+            }
+        );
+    </script>
+    <script src="https://api-maps.yandex.ru/v3/?apikey=eab93a53-9971-4574-be9d-ecac94c9446f&lang=ru_RU"></script>
+</head>
+
+<body data-bs-theme="dark" class="bg-secondary">
+<h1>Map 2gis</h1>
+<div id="map-container"></div>
+<div id="container"></div>
+<script src="https://mapgl.2gis.com/api/js/v1"></script>
+<script src="https://unpkg.com/@2gis/mapgl-directions@^2/dist/directions.js"></script>
+<script>
+    const map = new mapgl.Map('container', {
+        center: [lng, lat],
+        zoom: 13,
+        key: 'a03f49e3-b375-4933-ac64-8a18f902f805',
+        style: 'c080bb6a-8134-4993-93a1-5b4d8c36a59b'
+    });
+    const marker = new mapgl.Marker(map, {
+        coordinates: [71.47228, 51.12564],
+        label: {
+            text: "Мечеть",
+            offset: [0, -75],
+            image: {
+                url: 'https://docs.2gis.com/img/mapgl/tooltip.svg',
+                size:[100,40],
+                padding:[10, 10, 20,10],
+            }
+        }
+    });
+
+    const marker2 = new mapgl.Marker(map, {
+        coordinates: [71.4029295, 51.10826195259179],
+        label: {
+            text: "Мечеть",
+            offset: [0, -75],
+            image: {
+                url: 'https://docs.2gis.com/img/mapgl/tooltip.svg',
+                size:[100,40],
+                padding:[10, 10, 20,10],
+            }
+        }
+    });
+
+    const userMarker = new mapgl.Marker(map, {
+        coordinates: [lng, lat],
+        label: {
+            text: "Я",
+            offset: [0, -75],
+            image: {
+                url: 'https://docs.2gis.com/img/mapgl/tooltip.svg',
+                size:[100,40],
+                padding:[10, 10, 20,10],
+            }
+        }
+    });
+
+    const directions = new mapgl.Directions(map, {
+        // This key can be used for demo purpose only!
+        // You can get your own key on http://partner.api.2gis.ru/
+        directionsApiKey: 'a03f49e3-b375-4933-ac64-8a18f902f805',
+    });
+
+    directions.pedestrianRoute({
+        points: [userMarker.getCoordinates(), marker.getCoordinates(), marker2.getCoordinates()],
+    });
+</script>
+</body>
+</html>

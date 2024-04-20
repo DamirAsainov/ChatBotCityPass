@@ -1,4 +1,4 @@
-@media (max-width: 800px) {
+@media (max-width: 1056px) {
     
     .header-container {
         padding: 5px 70px;
@@ -26,4 +26,47 @@
         padding-top: 50px;
     }
 
+    .chat {
+        width: 100%;
+    }
+
+    .two-gis-map {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+@media (max-width: 475px) {
+    .header-container {
+        padding: 10px 20px;
+    }
+
+    .brand {
+        font-size: 16px;
+    }
+
+    main {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .message-send {
+        padding-top: 80px;
+    }
+
+    .chat {
+        padding-top: 30px;
+    }
+
+    .info {
+        padding-top: 50px;
+    }
+
+    .author {
+        width: 30px;
+    }
+
+    .two-gis-map {
+        height: 200px;
+    }
 }
