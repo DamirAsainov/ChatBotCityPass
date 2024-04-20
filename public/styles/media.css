@@ -1,0 +1,29 @@
+@media (max-width: 800px) {
+    
+    .header-container {
+        padding: 5px 70px;
+    }
+
+    .brand {
+        font-size: 22px;
+    }
+
+    main {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+
+    .main-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .message-send {
+        padding-top: 100px;
+    }
+
+    .info {
+        padding-top: 50px;
+    }
+
+}
