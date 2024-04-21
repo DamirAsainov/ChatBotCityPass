@@ -18,7 +18,7 @@ app.use(express.static('public'));
 
 
 app.get('/',  async (req, res) => {
-    gisAPI.makeRouting()
+    // gisAPI.makeRouting()
     try{
         res.render('index');
     }catch (e){
@@ -29,11 +29,11 @@ app.get('/',  async (req, res) => {
 app.get('/map',(req, res) =>{
     res.render('map')
 })
-app.get('/map/make-map',(req, res) =>{
-    const lat = req.query.lat;
-    const lng = req.query.lng;
-    res.send(gisAPI.makeMap(lng, lat))
-});
+// app.get('/map/make-map',(req, res) =>{
+//     const lat = req.query.lat;
+//     const lng = req.query.lng;
+//     res.send(gisAPI.makeMap(lng, lat))
+// });
 
 const PORT = process.env.PORT || 3000;
 async function start(){

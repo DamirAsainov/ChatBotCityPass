@@ -78,7 +78,7 @@ main {
 }
 
 .chat {
-    padding-top: 70px;
+    padding-top: 30px;
     width: 60%;
 }
 
@@ -124,6 +124,10 @@ main {
 #send-message::placeholder {
     color: #FAFAFA;
     opacity: 80%;
+}
+
+.info {
+    padding-top: 30px;
 }
 
 .second-row {
