@@ -1,20 +1,52 @@
-const apiKey = process.env.TWO_GIS_API_KEY;
-// const map = new mapgl.Map('container', {
-//     key: apiKey,
-//     center: [55.31878, 25.23584],
-//     zoom: 13,
-// });
+const {Client} = require('@botpress/client')
 
-
-// function makeMap(lng, lat){
-//     return new mapgl.Map('container', {
-//         center: [lng, lat],
-//         zoom: 13,
-//         key: apiKey,
-//         style: 'c080bb6a-8134-4993-93a1-5b4d8c36a59b'
-//     });
-// }
-function userMarker(){
-
+const client = new Client({
+    token: 'bp_pat_Lm24wLcwWTlKrNwGsGzuIqtDq7c0GSfTtAGc',
+    botId: '6cda6528-dcb7-47d0-8cda-534580bddd35',
+    workspaceId: 'wkspace_01HVX56C32ET3HJVC3RHT0HA83'
+})
+async function findTableData() {
+    const { rows, limit, offset, count } = await client.findTableRows({
+        table: 'Data2Table',
+        limit: 20,
+        offset: 0,
+        filter: {},
+        orderBy: 'row_id',
+        orderDirection: 'desc'
+    })
+    return rows
 }
-// module.exports.makeMap = makeMap;
+async function upsertTableData(tableName, name){
+    const { rows, inserted, updated, errors, warnings } = await client.upsertTableRows({
+        table: {tableName},
+        keyColumn: 'id',
+        rows: [
+            {
+                Name: {name}
+            }
+        ]
+    })
+}
+async function deleteTableData(tableName,name){
+    const { deletedRows } = await client.deleteTableRows({
+        table: 'Data2Table',
+        // Specify a list of IDs
+        ids: [1, 2, 3],
+        // Or use a filter (caution: all rows matching the filter will be deleted. It's advisable to first test with the findTableRows query)
+        filter: { Name: {name} },
+        // Deletes every row within this table, irreversible action
+        deleteAllRows: true
+    })
+}
+
+async function checkResult(){
+    const rows = await findTableData();
+    console.log(rows[0].Transport + "| " + rows[0].Destination)
+    if(!rows){
+        return;
+    }
+    return {destination: rows[0].Destination, transport: rows[0].Transport}
+}
+
+module.exports.findTableData = findTableData;
+module.exports.checkResults = checkResult;

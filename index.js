@@ -26,6 +26,12 @@ app.get('/',  async (req, res) => {
         res.send(e);
     }
 });
+
+app.get('/map/update', async (req, res) => {
+    // const name = req.body.username;
+    res.send(await gisAPI.checkResults());
+})
+
 app.get('/map',(req, res) =>{
     res.render('map')
 })
