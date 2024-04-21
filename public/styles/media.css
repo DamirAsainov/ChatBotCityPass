@@ -37,6 +37,7 @@
 }
 
 @media (max-width: 475px) {
+
     .header-container {
         padding: 10px 20px;
     }
@@ -68,5 +69,10 @@
 
     .two-gis-map {
         height: 200px;
+    }
+
+    .footer-container {
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }

@@ -48,6 +48,7 @@ main {
 
 .brand {
     letter-spacing: 1.2px;
+    font-weight: 300;
 }
 
 .navbar-menu {
@@ -102,4 +103,60 @@ main {
     border-radius: 20px;
 }
 
+footer {
+    background-color: #000000;
+    margin-top: 20px;
+}
+
+.footer-container {
+    padding: 20px 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #fafafa;
+}
+
+.footer-brand p{
+    font-size: 12px;
+}
+
+.footer-brand h3 {
+    font-size: 18px;
+}
+
+.authors {
+    letter-spacing: 1.2px;
+    font-size: 12px;
+}
+
+.second-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.route-btn {
+    margin-top: 20px;
+
+    color: #fafafa;
+    background-color: #131224;
+
+    padding: 5px 13px;
+
+    border-radius: 7px;
+    border: 2px solid #fafafa;
+    font-family: "Poppins", sans-serif;
+
+    transition: .2s linear;
+
+    cursor: pointer;
+}
+
+.route-btn:hover {
+    color: #131224;
+    background-color: #fafafa;
+    border: 2px solid #fafafa;
+}
 
