@@ -9,9 +9,8 @@
     <link rel="stylesheet" href="styles/media.css">
     <style>
         .center-div {
-            width: 50vw;
+            width: 100%;
             height: 80vh;
-            background-color: rgb(102, 71, 255);
             border-radius: 15px;
             padding: 5px;
             box-sizing: border-box;
@@ -56,47 +55,39 @@
 
 <body data-bs-theme="dark" class="bg-secondary">
 
-    <header class="header">
+<header class="header">
 
-        <header class="header-container">
+    <header class="header-container">
 
-            <h1 class="brand">
-                PEACE DATA
-            </h1>
-    
-            <div class="navbar-menu">
-    
-                <div class="navbar-item">About Us</div>
-                <div class="navbar-item">Account</div>
-    
-            </div>
-
-        </header>
+        <h1 class="brand">
+            PEACE DATA
+        </h1>
 
     </header>
 
-    <div class="main-wrapper">
-        
-        <main id="main">
+</header>
 
-            <div class="main-body">
+<div class="main-wrapper">
 
-                
-                <div class="chat">
-                    <div>
-                        <p style="text-align: center;">Botpress Chatbot in a <span><</span><span>div></span></p>
-                        <div class="absolute inset-4 ">
-                            <div
-                                    class="center-div relative h-full w-full overflow-clip rounded-md border border-zinc-200 bg-white p-2 px-0 py-0"
-                            >
-                                <iframe
-                                        style="border: none;"
-                                        srcdoc="<body><script src='https://cdn.botpress.cloud/webchat/v0/inject.js'></script>
+    <main id="main">
+
+        <div class="main-body">
+
+
+            <div class="chat">
+                <div>
+                    <div class="absolute inset-4 ">
+                        <div
+                                class="center-div relative h-full w-full overflow-clip rounded-md border border-zinc-200 bg-white p-2 px-0 py-0"
+                        >
+                            <iframe
+                                    style="border: none;"
+                                    srcdoc="<body><script src='https://cdn.botpress.cloud/webchat/v0/inject.js'></script>
                                 <script>
                                    window.botpressWebChat.init({
                                         'composerPlaceholder': 'Chat with bot',
-                                        'botConversationDescription': 'This chatbot was built surprisingly fast with Botpress',
-                                        'botName': 'Name',
+                                        'botConversationDescription': 'Created by Peace Data',
+                                        'botName': 'CityPass Chat-Bot',
                                         'botId': '6cda6528-dcb7-47d0-8cda-534580bddd35',
                                         'hostUrl': 'https://cdn.botpress.cloud/webchat/v0',
                                         'messagingUrl': 'https://messaging.botpress.cloud',
@@ -117,190 +108,138 @@
                                    });
                                    window.botpressWebChat.onEvent(function () { window.botpressWebChat.sendEvent({ type: 'show' }) }, ['LIFECYCLE.LOADED']);
                                     </script></body>"
-                                        width="100%"
-                                        height="100%"
-                                ></iframe>
-                            </div>
+                                    width="100%"
+                                    height="100%"
+                            ></iframe>
                         </div>
                     </div>
-                    
-                    <div class="messages">
-                        <div class="message-block">
-
-                            <img src="imgs/Group 3.svg" alt="" class="author">
-    
-                            <div class="message-text">
-                                Hey, how are you?
-                            </div>
-    
-                        </div>
-    
-                        <div class="message-block after">
-    
-                            <img src="imgs/Icon.svg" alt="" class="author">
-    
-                            <div class="message-text">
-                                Great! What can I do for you?
-                            </div>
-    
-                        </div>
-    
-                        <div class="message-block after">
-    
-                            <img src="imgs/Group 3.svg" alt="" class="author">
-    
-                            <div class="message-text">
-                                What is the nearest building?
-                            </div>
-    
-                        </div>
-    
-                        <div class="message-block after">
-    
-                            <img src="imgs/Icon.svg" alt="" class="author">
-    
-                            <div class="message-text">
-                                The closest building is <span class="highlight">Khan Shatyr.</span> <br>
-                                <br>
-                                You can get more information in the right bar.
-                            </div>
-    
-                        </div>
-                    </div>
-
-                    <div class="message-send">
-
-                        <input type="text" name="send-message"
-                        placeholder="Type your message..."
-                        id="send-message">
-
-                    </div>
-
                 </div>
-
-                <div class="info">
-
-                    <div class="first-row">
-
-                        <div class="weather">
-                            <script>
-                                (function(d, s, id) {
-                                    if (d.getElementById(id)) {
-                                        if (window.__TOMORROW__) {
-                                            window.__TOMORROW__.renderWidget();
-                                        }
-                                        return;
-                                    }
-                                    const fjs = d.getElementsByTagName(s)[0];
-                                    const js = d.createElement(s);
-                                    js.id = id;
-                                    js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
-
-                                    fjs.parentNode.insertBefore(js, fjs);
-                                })(document, 'script', 'tomorrow-sdk');
-                            </script>
-
-                            <div class="tomorrow"
-                                 data-location-id="065737"
-                                 data-language="EN"
-                                 data-unit-system="METRIC"
-                                 data-skin="light"
-                                 data-widget-type="aqiMini"
-                                 style="padding-bottom:22px;position:relative;"
-                            >
-                                <a
-                                        href="https://www.tomorrow.io/weather-api/"
-                                        rel="nofollow noopener noreferrer"
-                                        target="_blank"
-                                        style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
-                                >
-                                    <img
-                                            alt="Powered by the Tomorrow.io Weather API"
-                                            src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
-                                            width="250"
-                                            height="18"
-                                    />
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="second-row">
-
-                        <div class="two-gis-map" id="two-gis">
-
-                        </div>
-                        
-                    </div>
-
-                </div>
-
 
             </div>
 
-        </main>
+            <div class="info">
 
-    </div>
+                <div class="first-row">
 
-    <script src="https://mapgl.2gis.com/api/js/v1"></script>
-    <script src="https://unpkg.com/@2gis/mapgl-directions@^2/dist/directions.js"></script>
-    <script>
-        const map = new mapgl.Map('two-gis', {
-            center: [lng, lat],
-            zoom: 13,
-            key: 'a03f49e3-b375-4933-ac64-8a18f902f805',
-            style: 'c080bb6a-8134-4993-93a1-5b4d8c36a59b'
-        });
-        const marker = new mapgl.Marker(map, {
-            coordinates: [71.47228, 51.12564],
-            label: {
-                text: "Мечеть",
-                offset: [0, -75],
-                image: {
-                    url: 'https://docs.2gis.com/img/mapgl/tooltip.svg',
-                    size:[100,40],
-                    padding:[10, 10, 20,10],
-                }
+                    <div class="weather">
+                        <script>
+                            (function(d, s, id) {
+                                if (d.getElementById(id)) {
+                                    if (window.__TOMORROW__) {
+                                        window.__TOMORROW__.renderWidget();
+                                    }
+                                    return;
+                                }
+                                const fjs = d.getElementsByTagName(s)[0];
+                                const js = d.createElement(s);
+                                js.id = id;
+                                js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
+
+                                fjs.parentNode.insertBefore(js, fjs);
+                            })(document, 'script', 'tomorrow-sdk');
+                        </script>
+
+                        <div class="tomorrow"
+                             data-location-id="065737"
+                             data-language="EN"
+                             data-unit-system="METRIC"
+                             data-skin="dark"
+                             data-widget-type="aqiMini"
+                             style="padding-bottom:22px;position:relative;"
+                        >
+                            <a
+                                    href="https://www.tomorrow.io/weather-api/"
+                                    rel="nofollow noopener noreferrer"
+                                    target="_blank"
+                                    style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
+                            >
+                                <img
+                                        alt="Powered by the Tomorrow.io Weather API"
+                                        src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
+                                        width="250"
+                                        height="18"
+                                />
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="second-row">
+
+                    <div class="two-gis-map" id="two-gis">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="https://mapgl.2gis.com/api/js/v1"></script>
+<script src="https://unpkg.com/@2gis/mapgl-directions@^2/dist/directions.js"></script>
+<script>
+    const map = new mapgl.Map('two-gis', {
+        center: [lng, lat],
+        zoom: 13,
+        key: 'a03f49e3-b375-4933-ac64-8a18f902f805',
+        style: 'c080bb6a-8134-4993-93a1-5b4d8c36a59b'
+    });
+    const marker = new mapgl.Marker(map, {
+        coordinates: [71.47228, 51.12564],
+        label: {
+            text: "Мечеть",
+            offset: [0, -75],
+            image: {
+                url: 'https://docs.2gis.com/img/mapgl/tooltip.svg',
+                size:[100,40],
+                padding:[10, 10, 20,10],
             }
-        });
+        }
+    });
 
-        const marker2 = new mapgl.Marker(map, {
-            coordinates: [71.4029295, 51.10826195259179],
-            label: {
-                text: "Мечеть",
-                offset: [0, -75],
-                image: {
-                    url: 'https://docs.2gis.com/img/mapgl/tooltip.svg',
-                    size:[100,40],
-                    padding:[10, 10, 20,10],
-                }
+    const marker2 = new mapgl.Marker(map, {
+        coordinates: [71.4029295, 51.10826195259179],
+        label: {
+            text: "Мечеть",
+            offset: [0, -75],
+            image: {
+                url: 'https://docs.2gis.com/img/mapgl/tooltip.svg',
+                size:[100,40],
+                padding:[10, 10, 20,10],
             }
-        });
+        }
+    });
 
-        const userMarker = new mapgl.Marker(map, {
-            coordinates: [lng, lat],
-            label: {
-                text: "Я",
-                offset: [0, -75],
-                image: {
-                    url: 'https://docs.2gis.com/img/mapgl/tooltip.svg',
-                    size:[100,40],
-                    padding:[10, 10, 20,10],
-                }
+    const userMarker = new mapgl.Marker(map, {
+        coordinates: [lng, lat],
+        label: {
+            text: "Я",
+            offset: [0, -75],
+            image: {
+                url: 'https://docs.2gis.com/img/mapgl/tooltip.svg',
+                size:[100,40],
+                padding:[10, 10, 20,10],
             }
-        });
+        }
+    });
 
-        const directions = new mapgl.Directions(map, {
-            // This key can be used for demo purpose only!
-            // You can get your own key on http://partner.api.2gis.ru/
-            directionsApiKey: 'a03f49e3-b375-4933-ac64-8a18f902f805',
-        });
+    const directions = new mapgl.Directions(map, {
+        // This key can be used for demo purpose only!
+        // You can get your own key on http://partner.api.2gis.ru/
+        directionsApiKey: 'a03f49e3-b375-4933-ac64-8a18f902f805',
+    });
 
-        directions.pedestrianRoute({
-            points: [userMarker.getCoordinates(), marker.getCoordinates(), marker2.getCoordinates()],
-        });
-    </script>
+    directions.pedestrianRoute({
+        points: [userMarker.getCoordinates(), marker.getCoordinates(), marker2.getCoordinates()],
+    });
+</script>
 </body>
 
 </html>

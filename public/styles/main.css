@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #FAFAFA;
+    background-color: #131224;
     color: #111026;
 
     font-size: 16px;
@@ -35,13 +35,13 @@ main {
     padding: 10px 120px;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 
 }
 
 .header {
-    background-color: #00B1FE;
+    background-color: #000;
 
     color: #fafafa;
 }
@@ -69,61 +69,20 @@ main {
 
 main {
     padding: 0px 120px;
+
+    height: 100%;
 }
 
 .main-body {
     display: flex;
-
+    height: 100%;
     justify-content: space-between;
 }
 
 .chat {
     padding-top: 30px;
     width: 60%;
-}
-
-.message-block {
-    display: flex;
-    align-items: center;
-}
-
-.message-block.after {
-    padding-top: 30px;
-}
-
-.author {
-    height: 40px;
-}
-
-.message-text {
-    padding-left: 20px;
-}
-
-.highlight {
-    font-weight: 800;
-}
-
-.message-send {
-    padding-top: 200px;
-}
-
-#send-message {
-    padding: 15px 20px;
-
-    width: 100%;
-
-    font-family: "Poppins", sans-serif;
-    
-    background-color: #111026;
-    color: #FAFAFA;
-
-    border: none;
-    border-radius: 5px;
-}
-
-#send-message::placeholder {
-    color: #FAFAFA;
-    opacity: 80%;
+    height: 100%;
 }
 
 .info {
@@ -139,5 +98,8 @@ main {
     width: 300px; height: 200px;
 }
 
+.two-gis-map div {
+    border-radius: 20px;
+}
 
 
